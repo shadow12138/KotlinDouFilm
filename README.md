@@ -1,5 +1,5 @@
 # 豆瓣电影爬虫及可视化
-![image](https://github.com/shadow12138/KotlinDouFilm/blob/master/result/film.gif)
+<img src="https://github.com/shadow12138/KotlinDouFilm/blob/master/result/film.gif" alt="drawing" width="300"/>
 
 # 数据来源
 - 一部分是通过chrome的network找到api接口获取的
