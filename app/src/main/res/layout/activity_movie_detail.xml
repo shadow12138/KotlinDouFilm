@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/v_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary">
+
+    <com.example.kotlin_dou.view.slide_layout.slide.SlideLayout
+        android:id="@+id/slide_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:widget_disable_slider_refresh="true">
+
+        <com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout
+            android:id="@+id/v_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:widget_min_vertical_margin="@dimen/bottom_sheet_height">
+
+            <androidx.core.widget.NestedScrollView
+                android:paddingTop="50dp"
+                android:id="@+id/nsv_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include
+                        android:id="@+id/v_basic_info"
+                        layout="@layout/layout_basic_info" />
+
+                    <include
+                        android:id="@+id/v_rating"
+                        layout="@layout/layout_rating" />
+
+                    <include
+                        android:id="@+id/v_tags"
+                        layout="@layout/layout_tags" />
+
+                    <include
+                        android:id="@+id/v_introduction"
+                        layout="@layout/layout_introduction" />
+
+                    <include
+                        android:id="@+id/v_actors"
+                        layout="@layout/layout_actors" />
+
+                    <include
+                        android:id="@+id/v_comment"
+                        layout="@layout/layout_comment" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp" />
+
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout>
+
+        <com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout
+            android:id="@+id/v_slider"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/v_review"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.example.kotlin_dou.view.slide_layout.slide.SlideBarLayout
+                    android:paddingTop="10dp"
+                    android:background="@drawable/shape_review"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="43dp"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:paddingLeft="14dp">
+
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:id="@+id/tv_review"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:text="影评"
+                                android:textColor="@color/text_color_01"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:paddingTop="6dp"
+                                android:id="@+id/tv_review_counts"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="2dp"
+                                android:textColor="@color/text_color_03"
+                                android:textSize="10sp" />
+
+                            <TextView
+                                android:gravity="center_vertical"
+                                android:id="@+id/tv_discuss"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="30dp"
+                                android:text="讨论"
+                                android:textColor="@color/text_color_02"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:paddingTop="6dp"
+                                android:id="@+id/tv_discuss_counts"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="2dp"
+                                android:text=""
+                                android:textColor="@color/text_color_03"
+                                android:textSize="10sp" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:id="@+id/v_indicator"
+                            android:layout_width="40dp"
+                            android:layout_height="2dp"
+                            android:layout_marginLeft="14dp"
+                            android:background="#000" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:background="#eee" />
+                    </LinearLayout>
+                </com.example.kotlin_dou.view.slide_layout.slide.SlideBarLayout>
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout>
+
+    </com.example.kotlin_dou.view.slide_layout.slide.SlideLayout>
+
+    <include
+        android:id="@+id/v_appbar"
+        layout="@layout/layout_appbar" />
+</FrameLayout>
+
+
+

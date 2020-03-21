@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item >
+
+        <bitmap android:src="@drawable/ic_like" android:tint="@color/white"/>
+
+        <shape >
+            <size android:width="6dp" android:height="6dp"/>
+        </shape>
+    </item>
+
+</selector>

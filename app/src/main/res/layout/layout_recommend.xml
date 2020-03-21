@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="40dp"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="为你推荐"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:nestedScrollingEnabled="false"
+        android:id="@+id/rcv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <FrameLayout
+        android:paddingTop="40dp"
+        android:paddingBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:visibility="visible"
+            android:id="@+id/v_loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+            <com.wang.avi.AVLoadingIndicatorView
+                app:indicatorColor="#67ba62"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                app:indicatorName="BallPulseIndicator"
+                />
+
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_color_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加载中"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/v_no_more"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center">
+
+           <View
+               android:layout_width="50dp"
+               android:layout_height="1dp"
+               android:background="#eee"/>
+
+            <TextView
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:textSize="12sp"
+                android:textColor="@color/text_color_03"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="我也是有底线的"/>
+
+            <View
+                android:layout_width="50dp"
+                android:layout_height="1dp"
+                android:background="#eee"/>
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

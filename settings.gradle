@@ -1,0 +1,2 @@
+include ':app', ':slidelayoutlibrary'
+rootProject.name='Kotlin-Dou'

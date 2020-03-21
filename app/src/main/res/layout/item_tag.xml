@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp"
+    android:textColor="@color/white"
+    android:background="@drawable/shape_tag"
+    android:text="战争"
+    android:drawablePadding="6dp"
+    android:drawableRight="@drawable/item_tag_arrow"
+    android:layout_marginRight="10dp"
+    android:textSize="13sp"/>
+

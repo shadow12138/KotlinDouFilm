@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="MovieDetailRatingBar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="starEmpty">@drawable/rating_star_card_empty</item>
+        <item name="starFill">@drawable/rating_star_small_on</item>
+        <item name="starHalf">@drawable/rating_star_small_half</item>
+        <item name="starImageHeight">10dp</item>
+        <item name="starImageWidth">10dp</item>
+        <item name="starImagePadding">0dp</item>
+        <item name="android:clickable">false</item>
+    </style>
+
+    <style name="RatingCount">
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:layout_height">7dp</item>
+        <item name="android:background">@drawable/shape_rating_count</item>
+    </style>
+
+
+</resources>

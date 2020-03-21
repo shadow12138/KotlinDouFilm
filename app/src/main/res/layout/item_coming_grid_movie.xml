@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:scaleType="centerCrop"
+        android:id="@+id/iv"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:riv_corner_radius="4dp"/>
+
+    <View
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:background="@drawable/bg_rounded"/>
+
+    <ImageView
+        app:layout_constraintLeft_toLeftOf="@id/iv"
+        app:layout_constraintTop_toTopOf="@id/iv"
+        android:background="@drawable/shape_wish"
+        android:src="@drawable/ic_subject_rating_mark_wish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/black"
+        android:text="1917"
+        app:layout_constraintLeft_toLeftOf="@id/iv"
+        app:layout_constraintTop_toBottomOf="@id/iv"
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <TextView
+        app:layout_constraintLeft_toLeftOf="@id/iv"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        android:textSize="9sp"
+        android:id="@+id/tv_wish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_color_03"
+        android:text="34957人想看"/>
+
+    <TextView
+        android:layout_marginTop="4dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        app:layout_constraintLeft_toLeftOf="@id/iv"
+        app:layout_constraintTop_toBottomOf="@id/tv_wish"
+        android:textSize="8sp"
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#D15464"
+        android:background="@drawable/shape_date"
+        android:text="3月10日"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

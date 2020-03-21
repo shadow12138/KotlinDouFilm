@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="14dp"
+    android:paddingRight="14dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@drawable/bg_rating"
+        android:paddingLeft="14dp"
+        android:paddingRight="14dp"
+        android:paddingTop="6dp"
+        android:paddingBottom="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:textSize="12sp"
+                android:textColor="@color/white"
+                android:text="豆瓣评分"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:textSize="8sp"
+                android:textColor="@color/white"
+                android:text="TM"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="30sp"
+                    android:text="8.5"
+                    android:textColor="@color/white"/>
+
+                <com.hedgehog.ratingbar.RatingBar
+                    android:id="@+id/rating_bar"
+                    app:starImageHeight="14dp"
+                    app:starImageWidth="14dp"
+                    style="@style/MovieDetailRatingBar"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:gravity="right"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toRightOf="@id/rating_bar"
+                app:layout_constraintTop_toTopOf="@id/tv_score">
+
+                <com.hedgehog.ratingbar.RatingBar
+                    style="@style/MovieDetailRatingBar" />
+
+                <com.hedgehog.ratingbar.RatingBar
+                    style="@style/MovieDetailRatingBar"
+                    app:starCount="4" />
+
+                <com.hedgehog.ratingbar.RatingBar
+                    style="@style/MovieDetailRatingBar"
+                    app:starCount="3" />
+
+                <com.hedgehog.ratingbar.RatingBar
+                    style="@style/MovieDetailRatingBar"
+                    app:starCount="2" />
+
+                <com.hedgehog.ratingbar.RatingBar
+                    style="@style/MovieDetailRatingBar"
+                    app:starCount="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_counts"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="10dp"
+                    style="@style/RatingCount"/>
+
+                <View
+                    android:layout_width="49dp"
+                    style="@style/RatingCount"/>
+
+                <View
+                    android:layout_width="30dp"
+                    style="@style/RatingCount"/>
+
+                <View
+                    android:layout_width="10dp"
+                    style="@style/RatingCount"/>
+
+                <View
+                    android:layout_width="5dp"
+                    style="@style/RatingCount"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_rating_people"
+                android:textSize="9sp"
+                android:gravity="bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="143293人评分"
+                android:textColor="#44ffffff"/>
+        </LinearLayout>
+
+        <View
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="#33ffffff"/>
+
+        <LinearLayout
+            android:gravity="right"
+            android:layout_marginTop="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginRight="10dp"
+                android:id="@+id/tv_wish"
+                android:textColor="#88ffffff"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="32.5万人看过"/>
+
+            <TextView
+                android:id="@+id/tv_done"
+                android:textColor="#88ffffff"
+                android:textSize="11sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15.5万人看过"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+</LinearLayout>
