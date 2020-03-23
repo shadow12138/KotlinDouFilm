@@ -17,13 +17,15 @@ class ActorHolder(view: View): BaseHolder(view) {
         val width = Utils.dip2px(90f)
         llActors.removeAllViews()
 
-        jsonObject.optJSONArray("directors").run {
-            val layoutParams = LinearLayout.LayoutParams(width, -2)
-            layoutParams.leftMargin = Utils.dip2px(10f)
-            llActors.addView(getItem(optJSONObject(0)), layoutParams)
+        jsonObject.optJSONArray("directors")?.run {
+            if(length() > 0) {
+                val layoutParams = LinearLayout.LayoutParams(width, -2)
+                layoutParams.leftMargin = Utils.dip2px(10f)
+                llActors.addView(getItem(optJSONObject(0)), layoutParams)
+            }
         }
 
-        jsonObject.optJSONArray("actors").run {
+        jsonObject.optJSONArray("actors")?.run {
             tvAll.text = "全部${length()}"
 
             for(i in 0 until length()){

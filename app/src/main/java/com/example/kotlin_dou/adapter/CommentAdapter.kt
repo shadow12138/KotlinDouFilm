@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.utils.ImageUtils
+import com.example.kotlin_dou.view.ExpandableTextView
 import com.hedgehog.ratingbar.RatingBar
 import org.json.JSONArray
 import org.json.JSONObject
@@ -38,7 +39,7 @@ class CommentAdapter(private val jsonArray: JSONArray) :
         private val tvUsername = view.findViewById<TextView>(R.id.tv_user_name)
         private val tvDate = view.findViewById<TextView>(R.id.tv_date)
         private val ratingBar = view.findViewById<RatingBar>(R.id.rating_bar)
-        private val tvContent = view.findViewById<TextView>(R.id.tv_content)
+        private val tvContent = view.findViewById<ExpandableTextView>(R.id.tv_content)
         private val tvLike = view.findViewById<TextView>(R.id.tv_like)
         private val vDivider = view.findViewById<View>(R.id.v_divider)
 
@@ -56,7 +57,7 @@ class CommentAdapter(private val jsonArray: JSONArray) :
                     ratingBar.setStar(optString("star_count").toFloat())
                 }
 
-                tvContent.text = optString("comment")
+                tvContent.setExpandableText(optString("comment"))
                 tvLike.text = optString("vote_count")
                 tvDate.text = prettyDate(optString("create_time"))
             }

@@ -14,7 +14,7 @@
         android:textColor="@color/white"
         android:textStyle="bold"/>
 
-    <TextView
+    <com.example.kotlin_dou.view.ExpandableTextView
         android:layout_marginTop="10dp"
         android:id="@+id/tv_introduction"
         android:layout_width="wrap_content"

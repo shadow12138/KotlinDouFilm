@@ -100,4 +100,8 @@ class MovieDetailActivity: BaseActivity(), AppbarHolder.Callback {
 
     }
 
+    override fun onBackPressed() {
+        onBackClick()
+    }
+
 }
