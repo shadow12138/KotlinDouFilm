@@ -60,7 +60,7 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="40dp" />
+                        android:layout_height="30dp" />
 
 
                 </LinearLayout>
@@ -70,6 +70,7 @@
         </io.iftech.android.library.slide.MinVerticalMarginFrameLayout>
 
         <io.iftech.android.library.slide.MinVerticalMarginFrameLayout
+            android:background="@drawable/shape_review"
             android:id="@+id/v_slider"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -82,7 +83,6 @@
 
                 <io.iftech.android.library.slide.SlideBarLayout
                     android:paddingTop="10dp"
-                    android:background="@drawable/shape_review"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
