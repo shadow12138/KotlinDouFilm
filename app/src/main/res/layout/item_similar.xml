@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="6dp">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/iv"
+        android:layout_width="80dp"
+        android:layout_height="110dp"
+        android:scaleType="centerCrop"
+        app:riv_corner_radius="4dp" />
+
+    <TextView
+        android:ellipsize="end"
+        android:id="@+id/tv"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:maxLines="1"
+        android:text="它们"
+        android:textColor="@color/white"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

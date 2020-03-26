@@ -1,10 +1,10 @@
-package com.example.kotlin_dou.view.slide_layout.slide
+package io.iftech.android.library.slide
 
 import android.content.Context
 import android.util.AttributeSet
 import android.widget.FrameLayout
-import com.example.kotlin_dou.R
-import com.example.kotlin_dou.view.slide_layout.useAttrs
+import io.iftech.android.library.R
+import io.iftech.android.library.useAttrs
 
 class MinVerticalMarginFrameLayout @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
     : FrameLayout(context, attrs, defStyleAttr) {

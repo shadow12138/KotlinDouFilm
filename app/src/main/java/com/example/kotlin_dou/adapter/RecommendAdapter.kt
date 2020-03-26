@@ -6,6 +6,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.chad.library.adapter.base.BaseQuickAdapter
+import com.chad.library.adapter.base.module.LoadMoreModule
+import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.activity.MovieDetailActivity
 import com.example.kotlin_dou.utils.ImageUtils
@@ -13,28 +16,14 @@ import com.hedgehog.ratingbar.RatingBar
 import org.json.JSONArray
 import org.json.JSONObject
 
-class RecommendAdapter(private val jsonArray: JSONArray): RecyclerView.Adapter<RecommendAdapter.ViewHolder>() {
-    fun append(array: JSONArray){
-        for(i in 0 until array.length()){
-            jsonArray.put(array.optJSONObject(i))
-        }
-        notifyDataSetChanged()
+class RecommendAdapter(private val dataList: MutableList<JSONObject>) :
+    BaseQuickAdapter<JSONObject, RecommendAdapter.ViewHolder>(R.layout.item_recommend, dataList), LoadMoreModule {
+    override fun convert(helper: ViewHolder, item: JSONObject) {
+        helper.fillData(item, dataList.indexOf(item) != 0)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = View.inflate(parent.context, R.layout.item_recommend, null)
-        view.layoutParams = RecyclerView.LayoutParams(-1, -2)
-        return ViewHolder(view)
-    }
 
-    override fun getItemCount(): Int  = jsonArray.length()
-
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val jsonObject = jsonArray.optJSONObject(position)
-        holder.fillData(jsonObject, position != jsonArray.length() - 1)
-    }
-
-    class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
+    class ViewHolder(val view: View) : BaseViewHolder(view) {
         private val iv = view.findViewById<ImageView>(R.id.iv)
         private val tvTitle = view.findViewById<TextView>(R.id.tv_title)
         private val tvDesc = view.findViewById<TextView>(R.id.tv_desc)
@@ -43,9 +32,9 @@ class RecommendAdapter(private val jsonArray: JSONArray): RecyclerView.Adapter<R
         private val tvReason = view.findViewById<TextView>(R.id.tv_recommend_reason)
         private val vDivider = view.findViewById<View>(R.id.v_divider)
 
-        fun fillData(jsonObject: JSONObject, showDivider: Boolean){
+        fun fillData(jsonObject: JSONObject, showDivider: Boolean) {
 
-            vDivider.visibility = if(showDivider) View.VISIBLE else View.GONE
+            vDivider.visibility = if (showDivider) View.VISIBLE else View.INVISIBLE
 
             jsonObject.run {
                 optJSONObject("pic")?.let {

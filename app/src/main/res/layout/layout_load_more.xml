@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="20dp">
+
+    <LinearLayout
+        android:id="@+id/v_loading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <com.wang.avi.AVLoadingIndicatorView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:indicatorColor="#67ba62"
+            app:indicatorName="BallPulseIndicator" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="加载中"
+            android:textColor="@color/text_color_03"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_no_more"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="#eee" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="我也是有底线的"
+            android:textColor="@color/text_color_03"
+            android:textSize="12sp" />
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="#eee" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_fail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="加载失败"
+            android:textColor="@color/text_color_03"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/v_complete"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="点击加载更多"
+            android:textColor="@color/text_color_03"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+</FrameLayout>
+

@@ -1,2 +1,2 @@
-include ':app', ':slidelayoutlibrary'
+include ':app', ':slidelayoutlibrary', ':library'
 rootProject.name='Kotlin-Dou'

@@ -3,23 +3,16 @@ package com.example.kotlin_dou.activity
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.util.Log
-import android.view.View
-import androidx.core.widget.NestedScrollView
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.holder.*
 import com.example.kotlin_dou.utils.Utils
-import com.example.kotlin_dou.view.slide_layout.slide.configSlideChildTypeHeader
+import io.iftech.android.library.slide.configSlideChildTypeHeader
 import kotlinx.android.synthetic.main.activity_movie_detail.*
 import org.json.JSONObject
 
 class MovieDetailActivity: BaseActivity(), AppbarHolder.Callback {
     override fun onBackClick() {
-        if(slide_layout.isSliderCollapsed()){
-            finish()
-        } else{
-            slide_layout.quickReturn()
-        }
+        onBackPressed()
     }
 
     val detail = 0
@@ -34,8 +27,8 @@ class MovieDetailActivity: BaseActivity(), AppbarHolder.Callback {
 
     private fun initViews(){
         nsv_container.configSlideChildTypeHeader()
-        v_slider.setMinVerticalMargin(resources.getDimensionPixelSize(R.dimen.bottom_sheet_height))
-        v_header.minimumHeight = resources.getDimensionPixelSize(R.dimen.bottom_sheet_height)
+//        v_slider.setMinVerticalMargin(resources.getDimensionPixelSize(R.dimen.bottom_sheet_height))
+//        v_header.minimumHeight = resources.getDimensionPixelSize(R.dimen.bottom_sheet_height)
         slide_layout.expandHeader()
     }
 
@@ -84,6 +77,9 @@ class MovieDetailActivity: BaseActivity(), AppbarHolder.Callback {
         val appbarHolder = AppbarHolder(v_appbar, this)
         appbarHolder.fillData(jsonObject)
 
+        val similarHolder = SimilarHolder(v_similar)
+        similarHolder.requestData(jsonObject.optString("id"))
+
         nsv_container.viewTreeObserver.addOnScrollChangedListener {
             if(nsv_container.scrollY > Utils.dip2px(50f)){
                 appbarHolder.showInfo()
@@ -94,14 +90,9 @@ class MovieDetailActivity: BaseActivity(), AppbarHolder.Callback {
 
         slide_layout.doOnSliderExpandChange {
             if(it){
-                
+
             }
         }
 
     }
-
-    override fun onBackPressed() {
-        onBackClick()
-    }
-
 }

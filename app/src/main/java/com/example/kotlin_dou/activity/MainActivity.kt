@@ -16,7 +16,6 @@ class MainActivity : BaseActivity() {
     private val recommend = 1
     private var page = 0
     private val pageSize = 10
-    private var loadingMore = false
     private lateinit var recommendHolder: RecommendHolder
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,16 +27,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun initViews() {
-        nsv.setOnScrollChangeListener { v: NestedScrollView?, _: Int, scrollY: Int, _: Int, _: Int ->
-            v?.run {
-                if (scrollY == (getChildAt(0).measuredHeight) - measuredHeight) {
-                    if (!loadingMore) {
-                        page += 1
-                        requestData()
-                    }
-                }
-            }
-        }
+
+
     }
 
     private fun requestData() {
@@ -47,7 +38,7 @@ class MainActivity : BaseActivity() {
             "https://m.douban.com/rexxar/api/v2/movie/modules?need_manual_chart_card=1&for_mobile=1&ck=x6Ls"
         )
 
-        loadingMore = true
+
         getData(
             recommend,
             "https://m.douban.com/rexxar/api/v2/movie/suggestion?start=${pageSize * page}&count=${pageSize}&new_struct=1&with_review=1&for_mobile=1&ck=x6Ls"
@@ -65,18 +56,25 @@ class MainActivity : BaseActivity() {
                 }
             }
             recommend -> {
-                loadingMore = false
-
                 val jsonObject = JSONObject(response)
 
-                if(!::recommendHolder.isInitialized)
-                    recommendHolder = RecommendHolder(v_recommend)
+                if (!::recommendHolder.isInitialized)
+                    recommendHolder =
+                        RecommendHolder(v_recommend, object : RecommendHolder.Callback {
+                            override fun loadMore() {
+                                page += 1
+                                requestData()
+                            }
+                        })
 
                 val items = jsonObject.optJSONArray("items")
                 recommendHolder.fillData(items)
 
-                v_loading.visibility = if(items.length() >= pageSize) View.VISIBLE else View.GONE
-                v_no_more.visibility = if(items.length() < pageSize) View.VISIBLE else View.GONE
+                if (items.length() >= pageSize) {
+                    recommendHolder.loadMoreComplete()
+                } else {
+                    recommendHolder.loadMoreEnd()
+                }
             }
         }
 

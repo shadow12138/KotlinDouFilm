@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.adapter.DiscussAdapter
 import com.example.kotlin_dou.utils.HttpUtils
+import io.iftech.android.library.slide.configSlideChildTypeSlider
 
 class DiscussFragment : BaseFragment() {
 
@@ -39,6 +41,7 @@ class DiscussFragment : BaseFragment() {
 
     private fun initViews() {
         rootView.findViewById<TextView>(R.id.tv_title).text = "讨论列表"
+        rootView.findViewById<NestedScrollView>(R.id.nsv).configSlideChildTypeSlider()
 
         val id = arguments?.getString("id")
         getPcData(0, "https://movie.douban.com/subject/${id}/discussion/")

@@ -41,6 +41,10 @@ class HttpUtils {
                         val content = substring(startIndex + startTag.length, endIndex)
                         result[property] = content
                     }
+
+                    if(result.size < properties.size)
+                        break
+
                     results.add(result)
                 }
                 return results

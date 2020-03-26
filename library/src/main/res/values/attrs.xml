@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <declare-styleable name="WidgetSlideLayout">
         <attr name="widget_slide_overlay_distance" format="dimension" />
         <attr name="widget_disable_slider_refresh" format="boolean" />

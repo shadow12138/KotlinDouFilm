@@ -1,4 +1,4 @@
-package com.example.kotlin_dou.view.slide_layout.slide
+package io.iftech.android.library.slide
 
 import android.animation.Animator
 import android.animation.ValueAnimator
@@ -14,11 +14,11 @@ import androidx.core.view.NestedScrollingParent2
 import androidx.core.view.NestedScrollingParentHelper
 import androidx.core.view.ViewCompat
 import androidx.core.view.isInvisible
-import com.example.kotlin_dou.R
-import com.example.kotlin_dou.view.slide_layout.cancel
-import com.example.kotlin_dou.view.slide_layout.doOnUpdate
-import com.example.kotlin_dou.view.slide_layout.refresh.RefreshViewLayout
-import com.example.kotlin_dou.view.slide_layout.useAttrs
+import io.iftech.android.library.R
+import io.iftech.android.library.cancel
+import io.iftech.android.library.doOnUpdate
+import io.iftech.android.library.refresh.RefreshViewLayout
+import io.iftech.android.library.useAttrs
 import java.lang.ref.WeakReference
 import kotlin.math.abs
 

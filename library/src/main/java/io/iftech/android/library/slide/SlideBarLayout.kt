@@ -1,4 +1,4 @@
-package com.example.kotlin_dou.view.slide_layout.slide
+package io.iftech.android.library.slide
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,7 +11,7 @@ import android.widget.OverScroller
 import androidx.core.view.NestedScrollingChild2
 import androidx.core.view.NestedScrollingChildHelper
 import androidx.core.view.ViewCompat
-import com.example.kotlin_dou.view.slide_layout.dip
+import io.iftech.android.library.dip
 import kotlin.math.abs
 import kotlin.math.pow
 import kotlin.math.roundToInt

@@ -1,12 +1,12 @@
-package com.example.kotlin_dou.view.slide_layout.slide
+package io.iftech.android.library.slide
 
 import android.animation.Animator
 import android.animation.ValueAnimator
 import android.view.animation.DecelerateInterpolator
 import androidx.core.view.ViewCompat
-import com.example.kotlin_dou.view.slide_layout.cancel
-import com.example.kotlin_dou.view.slide_layout.refresh.RefreshViewLayout
-import com.example.kotlin_dou.view.slide_layout.doOnUpdate
+import io.iftech.android.library.cancel
+import io.iftech.android.library.refresh.RefreshViewLayout
+import io.iftech.android.library.doOnUpdate
 import kotlin.math.abs
 import kotlin.math.max
 import kotlin.math.min

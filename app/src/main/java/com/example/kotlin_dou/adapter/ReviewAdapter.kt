@@ -8,8 +8,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.utils.ImageUtils
 import com.hedgehog.ratingbar.RatingBar
-import org.json.JSONArray
-import org.json.JSONObject
 
 class ReviewAdapter(private val dataList: List<Map<String, String>>) :
     RecyclerView.Adapter<ReviewAdapter.ViewHolder>() {

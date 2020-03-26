@@ -2,6 +2,9 @@ package com.example.kotlin_dou
 
 import android.app.Application
 import android.content.Context
+import com.chad.library.adapter.base.module.LoadMoreModule
+import com.chad.library.adapter.base.module.LoadMoreModuleConfig
+import com.example.kotlin_dou.view.CustomLoadMoreView
 import com.zhy.http.okhttp.OkHttpUtils
 import okhttp3.OkHttpClient
 import java.util.concurrent.TimeUnit
@@ -21,5 +24,7 @@ class MyApplication: Application() {
         OkHttpUtils.initClient(okHttpClient)
 
         context = applicationContext
+
+        LoadMoreModuleConfig.defLoadMoreView = CustomLoadMoreView()
     }
 }

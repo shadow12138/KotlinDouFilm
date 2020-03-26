@@ -1,14 +1,19 @@
 package com.example.kotlin_dou.holder
 
 import android.view.View
+import androidx.core.widget.NestedScrollView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.adapter.ReviewAdapter
 import com.example.kotlin_dou.utils.HttpUtils
+import io.iftech.android.library.slide.configSlideChildTypeSlider
+import javax.xml.xpath.XPath
+import javax.xml.xpath.XPathFactory
 
 class ReviewHolder(view: View) : BaseHolder(view) {
     private val rcvReviews = view.findViewById<RecyclerView>(R.id.rcv)
+    private val nestedScrollView = view.findViewById<NestedScrollView>(R.id.nsv)
 
     fun requestData(id: String) {
         val url = "https://m.douban.com/movie/subject/${id}/?event_source=movie_hot_gaia"
@@ -17,6 +22,10 @@ class ReviewHolder(view: View) : BaseHolder(view) {
 
     override fun networkResponse(what: Int, response: String?) {
         super.networkResponse(what, response)
+
+        //TODO xpath
+        //val xPath = XPathFactory.newInstance().newXPath()
+
 
         val startTags = arrayListOf(
             "<img src=\"",
@@ -42,6 +51,7 @@ class ReviewHolder(view: View) : BaseHolder(view) {
     }
 
     fun fillData(dataList: List<Map<String, String>>) {
+        nestedScrollView.configSlideChildTypeSlider()
         rcvReviews.run {
             setHasFixedSize(true)
             layoutManager = LinearLayoutManager(context)

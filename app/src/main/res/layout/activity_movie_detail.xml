@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary">
 
-    <com.example.kotlin_dou.view.slide_layout.slide.SlideLayout
+    <io.iftech.android.library.slide.SlideLayout
+        android:layout_marginTop="50dp"
         android:id="@+id/slide_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:widget_disable_slider_refresh="true">
 
-        <com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout
+        <io.iftech.android.library.slide.MinVerticalMarginFrameLayout
             android:id="@+id/v_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:widget_min_vertical_margin="@dimen/bottom_sheet_height">
 
             <androidx.core.widget.NestedScrollView
-                android:paddingTop="50dp"
                 android:id="@+id/nsv_container"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
@@ -54,6 +54,10 @@
                         layout="@layout/layout_comment" />
 
 
+                    <include
+                        android:id="@+id/v_similar"
+                        layout="@layout/layout_similarity" />
+
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="40dp" />
@@ -63,9 +67,9 @@
 
             </androidx.core.widget.NestedScrollView>
 
-        </com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout>
+        </io.iftech.android.library.slide.MinVerticalMarginFrameLayout>
 
-        <com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout
+        <io.iftech.android.library.slide.MinVerticalMarginFrameLayout
             android:id="@+id/v_slider"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -76,7 +80,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <com.example.kotlin_dou.view.slide_layout.slide.SlideBarLayout
+                <io.iftech.android.library.slide.SlideBarLayout
                     android:paddingTop="10dp"
                     android:background="@drawable/shape_review"
                     android:layout_width="match_parent"
@@ -144,16 +148,16 @@
                             android:layout_height="2px"
                             android:background="#eee" />
                     </LinearLayout>
-                </com.example.kotlin_dou.view.slide_layout.slide.SlideBarLayout>
+                </io.iftech.android.library.slide.SlideBarLayout>
 
                 <androidx.viewpager.widget.ViewPager
                     android:id="@+id/vp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-        </com.example.kotlin_dou.view.slide_layout.slide.MinVerticalMarginFrameLayout>
+        </io.iftech.android.library.slide.MinVerticalMarginFrameLayout>
 
-    </com.example.kotlin_dou.view.slide_layout.slide.SlideLayout>
+    </io.iftech.android.library.slide.SlideLayout>
 
     <include
         android:id="@+id/v_appbar"

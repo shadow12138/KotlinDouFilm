@@ -1,4 +1,4 @@
-package com.example.kotlin_dou.view.slide_layout
+package io.iftech.android.library
 
 import android.animation.Animator
 import android.animation.ValueAnimator
@@ -6,6 +6,7 @@ import android.content.Context
 import android.content.res.TypedArray
 import android.util.AttributeSet
 import android.view.View
+import androidx.annotation.StyleRes
 import kotlin.math.roundToInt
 
 fun Animator.cancel(removeListener: Boolean) {

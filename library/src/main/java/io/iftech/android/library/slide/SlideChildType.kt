@@ -1,4 +1,4 @@
-package com.example.kotlin_dou.view.slide_layout.slide
+package io.iftech.android.library.slide
 
 import android.view.View
 

@@ -1,6 +1,7 @@
 package com.example.kotlin_dou.holder
 
 import android.animation.ObjectAnimator
+import android.graphics.Color
 import android.view.View
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -40,6 +41,7 @@ class AppbarHolder(view: View,val  callback: Callback): BaseHolder(view) {
         imbBack.setOnClickListener {
             callback.onBackClick()
         }
+
     }
 
     fun showInfo(){

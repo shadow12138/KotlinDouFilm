@@ -6,7 +6,6 @@ import android.widget.GridView
 import android.widget.TextView
 import com.example.kotlin_dou.R
 import com.example.kotlin_dou.activity.MovieDetailActivity
-import com.example.kotlin_dou.activity.TestActivity
 import com.example.kotlin_dou.adapter.MovieGridAdapter
 import org.json.JSONArray
 import org.json.JSONObject
